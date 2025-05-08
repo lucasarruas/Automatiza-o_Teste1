@@ -1,6 +1,8 @@
 package automatizado.page;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 /**
@@ -24,6 +26,11 @@ public abstract class BasePO {
 
     public String obterTituloPagina(){
         return driver.getTitle();
+    }
+
+    public static void escrever(WebElement input, String texto){
+        input.clear();
+        input.sendKeys(texto+ Keys.TAB);
     }
 }
 
